@@ -1,22 +1,37 @@
 #include<stdio.h>
+#include<stdlib.h>
+
 int main()
 {
-    int n,i,aux1;
-    scanf("%d",&n);
-    int vet[n];
-    for(i=1;i<n+1;i++)
+    int valor,i;
+    scanf("%d",&valor);
+    int pessoas[valor];
+
+    for(i = 0; i < valor ; i++)
     {
-        scanf("%d",&vet[i]);
+        scanf("%d", &pessoas[i]);
     }
-    int aux=vet[0];
-    for(i=1;i<n+1;i++)
+    int menor = pessoas[0];
+
+    for (i = 0 ; i < valor ; i++)
     {
-        if(vet[i]<aux)
+        if(pessoas[i] < menor)
         {
-            aux = vet[i];
-            aux1 = i;
+            menor = pessoas[i];
         }
     }
-    printf("%d\n",aux1);
+    int encontrado;
+
+    for(i = 0 ; i < valor ; i++)
+    {
+        if(pessoas[i] == menor)
+        {
+            encontrado = i;
+            break;
+        }
+    }
+    encontrado++;
+    printf("%d\n", encontrado);
+
     return 0;
 }

@@ -1,8 +1,9 @@
-#include<stdio.h>
+#include <stdio.h>
+
 int main()
 {
-    int x;
-    scanf("%d",&x);
-    printf("%x\n",x);
+    unsigned long long int num;
+    scanf("%llu", &num);
+    printf("%X\n",num & 0xFFFFFFFFFFFFFF);
     return 0;
 }
